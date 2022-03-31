@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack —-config webpack.config.js",
     "dev": "webpack --config webpack.config.dev.js",
-    "watch": "npm run dev --watch"
+    "start": "webpack serve --config webpack.config.dev.js"
   },
   "repository": {
     "type": "git",
@@ -42,6 +42,7 @@
     "terser-webpack-plugin": "^5.3.1",
     "url-loader": "^4.1.1",
     "webpack": "^5.70.0",
-    "webpack-cli": "^4.9.2"
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4"
   }
 }

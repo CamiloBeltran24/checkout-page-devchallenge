@@ -14,7 +14,7 @@ module.exports = {
     assetModuleFileName: 'assets/images/[hash][ext][query]',
   },
   mode: 'development',
-  watch: true,
+  devtool: 'source-map',
   resolve: {
     extensions: ['.js'],
   },
@@ -71,4 +71,12 @@ module.exports = {
     }),
     new CleanWebpackPlugin(),
   ],
+  devServer: {
+    static: {
+      directory: path.join(__dirname, 'dist'),
+    },
+    compress: true,
+    historyApiFallback: true,
+    port: 3006,
+  },
 };
