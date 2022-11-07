@@ -1,0 +1,138 @@
+.form-container {
+  padding: 40px 20px;
+  .form {
+    h2 {
+      font-size: 14px;
+      font-family: $primary-font;
+      margin-bottom: 10px;
+      &.shipping_title {
+        margin-top: 45px;
+      }
+    }
+    .last_row {
+      display: flex;
+      justify-content: space-between;
+    }
+    .field {
+      margin: 15px 0;
+      &.column {
+        // width: 40%;
+        display: inline-block;
+        max-width: 46%;
+        // margin-right: 20px;
+      }
+    }
+    label {
+      display: block;
+      font-size: 10px;
+      font-family: $primary-font;
+      color: #4f4f4f;
+      font-weight: 600;
+      text-transform: capitalize;
+      margin-bottom: 3px;
+    }
+    input,
+    select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 12px;
+      border: 1px solid $label-color;
+      padding-left: 35px;
+      padding-right: 35px;
+      background-repeat: no-repeat;
+      background-size: 15px;
+      background-position: left 10px center;
+      background-color: transparent;
+      color: $label-color;
+      outline: none;
+      &::placeholder {
+        // text-transform: capitalize;
+        color: $label-color;
+        font-size: 12px;
+        font-family: $primary-font;
+      }
+
+      &#mail {
+        background-image: url("/assets/svg/mail.svg");
+      }
+      &#phone {
+        background-image: url("/assets/svg/phone.svg");
+      }
+      &#full-name {
+        background-image: url("/assets/svg/account.svg");
+      }
+      &#address {
+        background-image: url("/assets/svg/home.svg");
+      }
+      &#city {
+        background-image: url("/assets/svg/location.svg");
+      }
+      &#postal-code {
+        background-image: url("/assets/svg/markunread.svg");
+      }
+    }
+    #country {
+      background-image: url("/assets/svg/location.svg");
+    }
+    .gdpr {
+      display: flex;
+      position: relative;
+      input[type="checkbox"] {
+        visibility: hidden;
+        z-index: -1;
+        opacity: 0;
+        position: absolute;
+        & + label {
+          padding-left: 25px;
+          position: relative;
+          font-size: 10px;
+          font-family: $primary-font;
+          text-decoration: none;
+          text-transform: none;
+          font-weight: 600;
+          margin-top: 5px;
+          &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            left: 0;
+            top: 50%;
+            border: 1px solid $label-color;
+            transform: translateY(-50%);
+            border-radius: 4px;
+            transition: all 0.3s ease-in-out;
+          }
+        }
+        &:checked {
+          & + label {
+            &::after {
+              background-color: $primary-color;
+              border-color: $primary-color;
+            }
+          }
+        }
+      }
+    }
+    .submit {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 20px;
+    }
+    .btn {
+      background-color: $primary-color;
+      color: white;
+      border-radius: 12px;
+      width: 166px;
+      height: 54px;
+      border: none;
+      outline: none;
+      font-size: 16px;
+      font-family: $primary-font;
+      text-transform: capitalize;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  }
+}

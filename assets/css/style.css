@@ -1,0 +1,275 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+  color: #4e5150;
+  padding-left: 10px;
+  margin: 30px 0;
+}
+
+footer {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  color: #828282;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 10px 0 30px;
+}
+footer a {
+  color: #f2994a;
+  text-decoration: none;
+}
+
+.shopping-cart {
+  width: 95%;
+  max-width: 350px;
+  padding: 30px 25px;
+  background-color: #f2f2f2;
+  margin: 0 auto;
+  border-radius: 12px;
+}
+.shopping-cart .product {
+  display: flex;
+  margin-bottom: 28px;
+  justify-content: space-between;
+}
+.shopping-cart .product-image {
+  width: 45%;
+  max-width: 160px;
+  border-radius: 23px;
+  overflow: hidden;
+}
+.shopping-cart .product-image figure {
+  width: 100%;
+}
+.shopping-cart .product-image figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.shopping-cart .product-info {
+  width: 50%;
+}
+.shopping-cart .product-info .name {
+  color: #4e5150;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+.shopping-cart .product-info .prices {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+.shopping-cart .product-info .prices .price-discount {
+  font-size: 16px;
+  color: #f2994a;
+}
+.shopping-cart .product-info .prices .price {
+  font-size: 10px;
+  line-height: 12px;
+  color: #4e5150;
+  margin-left: 4px;
+  text-decoration: line-through;
+}
+.shopping-cart .product-info .quantity {
+  margin-top: 40px;
+  width: 123px;
+  height: 50px;
+  padding: 14px 10px;
+  border: 1px solid #828282;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.shopping-cart .product-info .quantity .less,
+.shopping-cart .product-info .quantity .add {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  background-color: #e0e0e0;
+  text-align: center;
+  font-size: 25px;
+  color: #828282;
+  font-family: "Montserrat", sans-serif;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+.shopping-cart .product-info .quantity__number {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  color: #333333;
+}
+.shopping-cart .purchase-info {
+  width: 100%;
+}
+.shopping-cart .purchase-info div.shipping,
+.shopping-cart .purchase-info div.total {
+  position: relative;
+  font-family: "Montserrat", sans-serif;
+  color: #333333;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 18px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.shopping-cart .purchase-info div.shipping::before,
+.shopping-cart .purchase-info div.total::before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #bdbdbd;
+}
+
+.form-container {
+  padding: 40px 20px;
+}
+.form-container .form h2 {
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 10px;
+}
+.form-container .form h2.shipping_title {
+  margin-top: 45px;
+}
+.form-container .form .last_row {
+  display: flex;
+  justify-content: space-between;
+}
+.form-container .form .field {
+  margin: 15px 0;
+}
+.form-container .form .field.column {
+  display: inline-block;
+  max-width: 46%;
+}
+.form-container .form label {
+  display: block;
+  font-size: 10px;
+  font-family: "Montserrat", sans-serif;
+  color: #4f4f4f;
+  font-weight: 600;
+  text-transform: capitalize;
+  margin-bottom: 3px;
+}
+.form-container .form input,
+.form-container .form select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid #828282;
+  padding-left: 35px;
+  padding-right: 35px;
+  background-repeat: no-repeat;
+  background-size: 15px;
+  background-position: left 10px center;
+  background-color: transparent;
+  color: #828282;
+  outline: none;
+}
+.form-container .form input::placeholder,
+.form-container .form select::placeholder {
+  color: #828282;
+  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+}
+.form-container .form input#mail,
+.form-container .form select#mail {
+  background-image: url("/assets/svg/mail.svg");
+}
+.form-container .form input#phone,
+.form-container .form select#phone {
+  background-image: url("/assets/svg/phone.svg");
+}
+.form-container .form input#full-name,
+.form-container .form select#full-name {
+  background-image: url("/assets/svg/account.svg");
+}
+.form-container .form input#address,
+.form-container .form select#address {
+  background-image: url("/assets/svg/home.svg");
+}
+.form-container .form input#city,
+.form-container .form select#city {
+  background-image: url("/assets/svg/location.svg");
+}
+.form-container .form input#postal-code,
+.form-container .form select#postal-code {
+  background-image: url("/assets/svg/markunread.svg");
+}
+.form-container .form #country {
+  background-image: url("/assets/svg/location.svg");
+}
+.form-container .form .gdpr {
+  display: flex;
+  position: relative;
+}
+.form-container .form .gdpr input[type=checkbox] {
+  visibility: hidden;
+  z-index: -1;
+  opacity: 0;
+  position: absolute;
+}
+.form-container .form .gdpr input[type=checkbox] + label {
+  padding-left: 25px;
+  position: relative;
+  font-size: 10px;
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+  text-transform: none;
+  font-weight: 600;
+  margin-top: 5px;
+}
+.form-container .form .gdpr input[type=checkbox] + label::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  left: 0;
+  top: 50%;
+  border: 1px solid #828282;
+  transform: translateY(-50%);
+  border-radius: 4px;
+  transition: all 0.3s ease-in-out;
+}
+.form-container .form .gdpr input[type=checkbox]:checked + label::after {
+  background-color: #f2994a;
+  border-color: #f2994a;
+}
+.form-container .form .submit {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+.form-container .form .btn {
+  background-color: #f2994a;
+  color: white;
+  border-radius: 12px;
+  width: 166px;
+  height: 54px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  text-transform: capitalize;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=style.css.map */
