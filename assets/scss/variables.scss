@@ -4,7 +4,7 @@ $label-color: #828282;
 $text-color: #333333;
 $cart: #f2f2f2;
 $select-drop-color: #e0e0e0;
-$primary-font: "Montserrat", sans-serif;
+$primary-font: 'Montserrat', sans-serif;
 
 * {
   box-sizing: border-box;
@@ -30,4 +30,9 @@ footer {
     color: $primary-color;
     text-decoration: none;
   }
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }

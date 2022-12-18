@@ -25,9 +25,15 @@ footer a {
   text-decoration: none;
 }
 
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .shopping-cart {
   width: 95%;
-  max-width: 350px;
+  max-width: 380px;
   padding: 30px 25px;
   background-color: #f2f2f2;
   margin: 0 auto;
@@ -38,24 +44,21 @@ footer a {
   margin-bottom: 28px;
   justify-content: space-between;
 }
-.shopping-cart .product-image {
+.shopping-cart .product__image {
   width: 45%;
   max-width: 160px;
   border-radius: 23px;
   overflow: hidden;
 }
-.shopping-cart .product-image figure {
-  width: 100%;
-}
-.shopping-cart .product-image figure img {
+.shopping-cart .product__image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.shopping-cart .product-info {
+.shopping-cart .product__info {
   width: 50%;
 }
-.shopping-cart .product-info .name {
+.shopping-cart .product__info .name {
   color: #4e5150;
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
@@ -64,22 +67,22 @@ footer a {
   text-transform: capitalize;
   margin-bottom: 10px;
 }
-.shopping-cart .product-info .prices {
+.shopping-cart .product__info .prices {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
 }
-.shopping-cart .product-info .prices .price-discount {
+.shopping-cart .product__info .prices .price-discount {
   font-size: 16px;
   color: #f2994a;
 }
-.shopping-cart .product-info .prices .price {
+.shopping-cart .product__info .prices .price {
   font-size: 10px;
   line-height: 12px;
   color: #4e5150;
   margin-left: 4px;
   text-decoration: line-through;
 }
-.shopping-cart .product-info .quantity {
+.shopping-cart .product__info .quantity {
   margin-top: 40px;
   width: 123px;
   height: 50px;
@@ -90,8 +93,8 @@ footer a {
   align-items: center;
   justify-content: space-between;
 }
-.shopping-cart .product-info .quantity .less,
-.shopping-cart .product-info .quantity .add {
+.shopping-cart .product__info .quantity .less,
+.shopping-cart .product__info .quantity .add {
   display: flex;
   width: 20px;
   height: 20px;
@@ -103,8 +106,10 @@ footer a {
   align-items: center;
   justify-content: center;
   border-radius: 4px;
+  border: none;
+  outline: none;
 }
-.shopping-cart .product-info .quantity__number {
+.shopping-cart .product__info .quantity__number {
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
   color: #333333;
@@ -153,6 +158,7 @@ footer a {
 }
 .form-container .form .field {
   margin: 15px 0;
+  max-width: 495px;
 }
 .form-container .form .field.column {
   display: inline-block;

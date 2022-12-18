@@ -1,98 +1,85 @@
-const products = [
+const original_products = [
   {
-    name: "Vintage Backbag",
+    name: 'Vintage Backbag',
     price: 94.99,
     price_discount: 54.99,
-    product_image: "/assets/images/photo1.png",
+    product_image: '/assets/images/photo1.png',
     amount: 1,
     shipping: 9.5,
   },
   {
-    name: "Levi Shoes",
+    name: 'Levi Shoes',
     price: 124.99,
     price_discount: 74.99,
-    product_image: "/assets/images/photo2.png",
+    product_image: '/assets/images/photo2.png',
     amount: 1,
     shipping: 9.5,
   },
 ];
 
-let productsInCart = [];
+const products_in_cart = [];
 
-function calculateTotal(products) {
-  let totalBox = document.querySelector(".total__price");
-}
+const increase = (product) => {
+  product.amount += 1;
+};
 
-function createElementInCart(product) {
-  let element = `
-      <div class="product">
-        <div class="product-image">
-          <figure>
-            <img src="${product.product_image}" alt="${product.name}"/>
-          </figure>
-        </div>
-        <div class="product-info">
-          <div class="name">${product.name}</div>
-          <div class="prices">
-            <span class="price-discount">$${product.price_discount}</span>
-            <span class="price">$${product.price}</span>
-          </div>
-          <div class="quantity">
-            <div id="less" class='less'>-</div>
-            <span class="quantity__number">${product.amount}</span>
-            <div class='add'>+</div>
-          </div>
-        </div>
-      </div>`;
+const decrease = (product) => {
+  if (product.amount > 0) {
+    product.amount -= 1;
+  }
+};
+const shoppingBag = (products) => {
+  products.forEach((product) => {
+    const add_button = document.querySelector(`.add-${product.standar_name}`);
+    const less_button = document.querySelector(`.less-${product.standar_name}`);
+    const quantity = document.querySelector(
+      `.quantity-${product.standar_name} .quantity_number`
+    );
 
-  return element;
-}
+    add_button.addEventListener('click', () => {
+      increase(product);
+      quantity.innerText = product.amount;
+    });
 
-function addContentInCart() {
-  const shoppingCartBox = document.querySelector(".shopping-cart");
+    less_button.addEventListener('click', () => {
+      decrease(product);
+      quantity.innerText = product.amount;
+    });
+  });
+};
+
+const renderProducts = (products) => {
+  let shoppingCart = document.querySelector('.shopping-cart');
+
+  let standar_name = '';
 
   products.forEach((product) => {
-    let product_cart = createElementInCart(product);
-
-    shoppingCartBox.innerHTML += product_cart;
+    standar_name = product.name.replace(' ', '-').toLowerCase();
+    let HTML_PRODUCT = `
+    <div class='product'>
+      <figure class="product__image">
+        <img src="${product.product_image}" alt="imagen del producto ${product.name}" aria-label="imagen del producto ${product.name}">
+      </figure>
+      <div class="product__info">
+        <h3 class="name">${product.name}</h3>
+        <div class="prices">
+          <span class="price-discount">$${product.price_discount}</span>
+          <span class="price">$${product.price}</span>
+        </div>
+        <aside class="quantity quantity-${standar_name}">
+          <button class="less less-${standar_name}"> - </button>
+          <span class="quantity_number ">${product.amount}</span>
+          <button class="add add-${standar_name}"> + </button>
+        </aside>
+      </div>
+    </div>
+  `;
+    product.standar_name = standar_name;
+    products_in_cart.push({ ...product });
+    shoppingCart.innerHTML += HTML_PRODUCT;
   });
 
-  // for (let i = 0; i < productsInCart.length; i++) {
-  //   product = productsInCart[i];
-  //   button_class = product.name.replace(/\s/g, "").toLowerCase();
-  //   let row = cart[i];
+  shoppingBag(products_in_cart);
+};
 
-  //   row.innerHTML = `
-  //     <div class="product-image">
-  //       <figure>
-  //         <img src="${product.product_image}" alt="${product.name}" />
-  //       </figure>
-  //     </div>
-  //     <div class="product-info">
-  //       <div class="name">${product.name}</div>
-  //       <div class="prices">
-  //         <span class="price-discount">$${product.price_discount}</span>
-  //         <span class="price">$${product.price}</span>
-  //       </div>
-  //       <div class="quantity">
-  //         <div id="less-${button_class}" class='less '>-</div>
-  //         <span class="quantity__number">${product.amount}</span>
-  //         <div class='add add-${button_class}'>+</div>
-  //       </div>
-  //     </div>`;
-  // }
-
-  shoppingCartBox.innerHTML += `
-  <div class="purchase-info">
-    <div class="shipping">
-      <span>Shipping</span>
-      <span class="shipping__price">$0</span>
-    </div>
-    <div class="total">
-      <span>Total</span>
-      <div class="total__price">$0</div>
-    </div>
-  </div>`;
-}
-
-addContentInCart();
+renderProducts(original_products);
