@@ -83,3 +83,61 @@ const renderProducts = (products) => {
 };
 
 renderProducts(original_products);
+
+//form Validations
+const clearForm = (values) => {
+  values.forEach((item) => {
+    item.value = ""
+  })
+}
+
+const createAlert = () => {
+
+  let container = document.querySelector(".container")
+
+  let alert_container = document.createElement('div')
+  alert_container.classList.add("success-alert")
+
+  let icon_box = document.createElement('figure')
+  let icon = document.createElement('img')
+  icon_box.classList.add("icon")
+  icon.setAttribute("src", "/assets/svg/success.svg")
+  
+  container.append(alert_container)
+  icon_box.append(icon)
+  alert_container.append(icon_box)
+
+  console.log(container);
+}
+
+let form = document.querySelector('form');
+let submit_button = document.querySelector('.submit input');
+
+let gdpr = document.getElementById("gdpr");
+
+let ready_to_send = false
+
+gdpr.addEventListener("change", ()=>{
+  if(gdpr.classList.contains("empty")){
+    gdpr.classList.remove("empty")
+  }
+})
+
+form.addEventListener('submit', (e) => {
+  
+  let email = document.getElementById("mail");
+  let phone = document.getElementById("phone");
+  let full_name = document.getElementById("full-name");
+  let address = document.getElementById("address");
+  let city = document.getElementById("city");
+  let country = document.getElementById("country");
+  let postal_code = document.getElementById("postal-code");
+
+  e.preventDefault()
+  
+  if(gdpr.checked) {
+    createAlert()
+  } else {
+    gdpr.classList.toggle("empty")
+  }
+});

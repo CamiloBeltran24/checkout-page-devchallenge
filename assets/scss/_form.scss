@@ -46,6 +46,7 @@
       background-color: transparent;
       color: $label-color;
       outline: none;
+      transition: all 0.5s ease-in-out;
       &::placeholder {
         // text-transform: capitalize;
         color: $label-color;
@@ -71,6 +72,12 @@
       &#postal-code {
         background-image: url('/assets/svg/markunread.svg');
       }
+      &.empty{
+        border-color: red;
+        &::placeholder{
+          color: red
+        }
+      }
     }
     #country {
       background-image: url('/assets/svg/location.svg');
@@ -92,6 +99,7 @@
           text-transform: none;
           font-weight: 600;
           margin-top: 5px;
+          transition: all 0.3s ease-in-out;
           &::after {
             content: '';
             display: block;
@@ -111,6 +119,26 @@
             &::after {
               background-color: $primary-color;
               border-color: $primary-color;
+            }
+          }
+        }
+        &.empty {
+          & + label {
+            color :red;
+            &::after {
+              border-color: red;
+            }
+            &::before{
+              content: "required";
+              background-color: red;
+              border-radius: 10px;
+              font-size: 14px;
+              color: #fff;
+              display: block;
+              position: absolute;
+              padding: 5px 7px;
+              bottom: -35px;
+              left: 20px;
             }
           }
         }
@@ -135,5 +163,21 @@
       font-weight: 600;
       cursor: pointer;
     }
+  }
+}
+
+.success-alert {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%;
+  max-width: 380px;
+  padding: 20px;
+  display: grid;
+  place-content: center;
+  .icon {
+    width: 40px;
+    height: 40px;
   }
 }
