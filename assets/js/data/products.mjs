@@ -6,7 +6,7 @@ export const products = [
     image: '/assets/images/photo1.png',
     amount: 1,
     shipping: 9.5,
-    standard_name: 'vintage-backbag',
+    standard_name: 'vintage-backbag'
   },
   {
     name: 'Levi Shoes',
@@ -15,6 +15,6 @@ export const products = [
     image: '/assets/images/photo2.png',
     amount: 1,
     shipping: 9.5,
-    standard_name: 'levi-shoes',
+    standard_name: 'levi-shoes'
   },
 ];
