@@ -4,3 +4,15 @@ export const clearForm = (values) => {
         item.value = ""
     })
 }
+const getFormValues = () => {
+  
+}
+
+export const validateForm = () => {
+  const formButton = document.getElementById('form_submit');
+
+  formButton.addEventListener('click', (e) => {
+    e.preventDefault();
+
+  })
+}

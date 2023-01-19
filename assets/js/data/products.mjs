@@ -5,7 +5,7 @@ export const products = [
     discount: 54.99,
     image: '/assets/images/photo1.png',
     amount: 1,
-    shipping: 9.5,
+    shipping: 11,
     standard_name: 'vintage-backbag'
   },
   {

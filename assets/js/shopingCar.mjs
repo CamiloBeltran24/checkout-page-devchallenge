@@ -32,9 +32,10 @@ export const updateShippingAndTotal = () => {
 
   products_in_cart.forEach( ( { amount, shipping, discount }) => {
     const totalPriceProduct = discount * amount;
-    const totalShippingProduct = shipping * amount
+    // const totalShippingProduct = shipping * amount
     purchasePrice += totalPriceProduct;
-    purchaseShipping += totalShippingProduct;
+    // purchaseShipping += totalShippingProduct;
+    shipping > purchaseShipping ? purchaseShipping = shipping : null;
   })
 
   shipping_container.innerText = `$${purchaseShipping.toFixed(2)}`;
