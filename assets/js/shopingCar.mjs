@@ -28,16 +28,16 @@ export const updateShippingAndTotal = () => {
   const shipping_container = document.querySelector('.shopping-cart .shipping .price');
   const total_container = document.querySelector('.shopping-cart .total .price')
   let purchasePrice = 0;
-  let pruchaseShipping = 0;
+  let purchaseShipping = 0;
 
   products_in_cart.forEach( ( { amount, shipping, discount }) => {
     const totalPriceProduct = discount * amount;
     const totalShippingProduct = shipping * amount
     purchasePrice += totalPriceProduct;
-    pruchaseShipping += totalShippingProduct;
+    purchaseShipping += totalShippingProduct;
   })
 
-  shipping_container.innerText = `$${pruchaseShipping.toFixed(2)}`;
+  shipping_container.innerText = `$${purchaseShipping.toFixed(2)}`;
   total_container.innerText = `$${purchasePrice.toFixed(2)}`;
 }
 
