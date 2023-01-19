@@ -1,4 +1,4 @@
-const createAlert = () => {
+export const createAlert = () => {
 
     let container = document.querySelector(".container")
 
@@ -13,6 +13,4 @@ const createAlert = () => {
     container.append(alert_container)
     icon_box.append(icon)
     alert_container.append(icon_box)
-
-    // console.log(container);
 }
