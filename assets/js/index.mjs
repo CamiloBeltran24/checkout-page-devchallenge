@@ -3,8 +3,6 @@ import  { renderProduct, createButtons, increase, decrease, updateShippingAndTot
 
 (() => {
 
-  const buttons = [];
-
   const useContext = ({ name, image, price, discount, amount, shipping, standard_name = ""}) => ({
     name: name,
     image: image,
