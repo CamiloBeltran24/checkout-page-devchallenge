@@ -166,6 +166,10 @@ footer a {
 .form-container {
   padding: 40px 20px;
 }
+.form-container .form {
+  max-width: 500px;
+  margin: 0 auto;
+}
 .form-container .form h2 {
   font-size: 14px;
   font-family: "Montserrat", sans-serif;
