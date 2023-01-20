@@ -1,5 +1,6 @@
 import  { products }  from './data/products.mjs';
 import { getFormData } from './forms.mjs';
+import { createAlert } from './alerts.mjs';
 import  { renderProduct, createButtons, increase, decrease, updateShippingAndTotal, products_in_cart } from './shopingCar.mjs'
 
 (() => {
@@ -56,6 +57,8 @@ import  { renderProduct, createButtons, increase, decrease, updateShippingAndTot
   FORM.addEventListener('submit', (e) => {
     e.preventDefault();
     formData = getFormData(e);
+
+    createAlert(products_in_cart); //send products to alert
   })
 
   //initialize APP

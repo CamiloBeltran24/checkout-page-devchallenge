@@ -72,10 +72,11 @@
           border: none;
           outline: none;
         }
-        &__number {
+        &_number {
           font-family: $primary-font;
           font-size: 16px;
           color: $text-color;
+          font-weight: 500;
         }
       }
     }
