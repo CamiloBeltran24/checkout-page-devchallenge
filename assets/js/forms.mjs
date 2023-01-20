@@ -4,15 +4,20 @@ export const clearForm = (values) => {
         item.value = ""
     })
 }
-const getFormValues = () => {
-  
-}
 
-export const validateForm = () => {
-  const formButton = document.getElementById('form_submit');
+export const getFormData = (e) => {
 
-  formButton.addEventListener('click', (e) => {
-    e.preventDefault();
+  const fields = Object.values(e.srcElement);
+  let obj = {};
 
-  })
+  fields.forEach((field) => {
+    Object.defineProperty(obj, field.id, {
+      value: field.value,
+      writable: false,
+      enumerable: true,
+      configurable: true
+    });
+  });
+
+  return obj;
 }

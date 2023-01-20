@@ -32,9 +32,7 @@ export const updateShippingAndTotal = () => {
 
   products_in_cart.forEach( ( { amount, shipping, discount }) => {
     const totalPriceProduct = discount * amount;
-    // const totalShippingProduct = shipping * amount
     purchasePrice += totalPriceProduct;
-    // purchaseShipping += totalShippingProduct;
     shipping > purchaseShipping ? purchaseShipping = shipping : null;
   })
 

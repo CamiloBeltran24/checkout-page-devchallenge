@@ -1,7 +1,9 @@
 import  { products }  from './data/products.mjs';
+import { getFormData } from './forms.mjs';
 import  { renderProduct, createButtons, increase, decrease, updateShippingAndTotal, products_in_cart } from './shopingCar.mjs'
 
 (() => {
+  let formData = {};
 
   const useContext = ({ name, image, price, discount, amount, shipping, standard_name = ""}) => ({
     name: name,
@@ -46,8 +48,16 @@ import  { renderProduct, createButtons, increase, decrease, updateShippingAndTot
     });
 
     updateShippingAndTotal();
-
   }
 
+  //Form validation
+  const FORM = document.getElementById('contact-form');
+  
+  FORM.addEventListener('submit', (e) => {
+    e.preventDefault();
+    formData = getFormData(e);
+  })
+
+  //initialize APP
   startApp();
 })();
