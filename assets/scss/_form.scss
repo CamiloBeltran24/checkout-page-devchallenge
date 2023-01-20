@@ -181,3 +181,13 @@
     height: 40px;
   }
 }
+
+@media screen and (min-width: 1200px) {
+  .form-container {
+    .form {
+      input, select {
+        height: 55px;
+      }
+    }
+  }
+}
